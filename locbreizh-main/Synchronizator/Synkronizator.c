@@ -164,21 +164,6 @@ int main(int argc, char **argv){
 
         r = read(cnx, r_buffer, sizeof(r_buffer));
 
-        // Vérifification des caractères spéciaux ou des espaces dans la clé lue
-        /*for (size_t i = 0; i < strlen(r_buffer); i++) {
-            if (!isalnum(r_buffer[i])) {
-                printf("Caractère non-alphanumérique détecté dans la clé.\n");
-                strcpy(validation, "false");
-                write(cnx, validation, strlen(validation));
-                break;
-            }
-        }
-
-        // Si la clé n'est pas valide, on passe à la prochaine itération de la boucle
-        if (strcmp(validation, "") != 0) {
-            continue;
-        }*/
-
         char request[10000] =""; // Requête sur la BDD
 
         snprintf(request, sizeof(request), "SELECT * FROM locbreizh._clefsapi WHERE idclef = '%s'", r_buffer);                                                                                                                                                                                                                                                                         
